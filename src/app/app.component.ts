@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -10,14 +10,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  users: Observable<any>;
+  users: Observable<any[]>;
   loading: boolean;
   form: FormGroup;
   success: boolean;
+  private usersCollecion: AngularFirestoreCollection;
+
   constructor(private afs: AngularFirestore, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.users = this.afs.collection('users').valueChanges();
+    this.usersCollecion = this.afs.collection('users');
+    this.users = this.usersCollecion.valueChanges();
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
@@ -30,14 +33,12 @@ export class AppComponent implements OnInit {
     this.loading = true;
     const formValue = this.form.value;
     try {
-      await this.afs.collection('users').add(formValue);
+      await this.usersCollecion.add(formValue);
       this.success = true;
     } catch(err) {
       console.error(err);
     }
-
     this.loading = false;
-
   }
 
 
