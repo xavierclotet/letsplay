@@ -12,3 +12,5 @@
 - ng build --prod
 - firebase init
 - firebase deploy
+
+https://lcd3-eb77b.firebaseapp.com/letsplay/
