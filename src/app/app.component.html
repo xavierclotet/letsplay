@@ -3,3 +3,18 @@
     {{ user | json }}
   </li>
 </ul>
+
+<form [formGroup]="form" [hidden]="success" (ngSubmit)="submitHandler()">
+  <mat-form-field>
+    <input matInput placeholder="email" formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="name" formControlName="name">
+  </mat-form-field>
+
+  <button mat-button color="primary" type="submit" [disabled]="form.invalid">Añadir</button>
+</form>
+
+<div *ngIf="success">
+  Usuari afegit OK!
+</div>
