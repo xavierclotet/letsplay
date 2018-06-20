@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { HttpClientModule } from "@angular/common/http";
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 /* import { AngularFireStorageModule } from 'angularfire2/storage';
@@ -21,6 +23,7 @@ import { firebaseConfig } from '../environments/firebase.config';
     BrowserModule, 
     BrowserAnimationsModule, 
     ReactiveFormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig, 'letsplay'),
     AngularFirestoreModule,
     MatInputModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { BggService } from './services/bgg.service';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,10 @@ export class AppComponent implements OnInit {
   loading: boolean;
   form: FormGroup;
   success: boolean;
+  hotness$: any;
   private usersCollecion: AngularFirestoreCollection;
 
-  constructor(private afs: AngularFirestore, private fb: FormBuilder) { }
+  constructor(private afs: AngularFirestore, private fb: FormBuilder, private bggService: BggService) { }
 
   ngOnInit() {
     this.usersCollecion = this.afs.collection('users');
@@ -25,7 +27,9 @@ export class AppComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
 
-    })
+    });
+
+    this.hotness$ = this.bggService.getHotness();
   }
 
 

@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
   <li class="text" *ngFor="let user of users | async">
     {{ user | json  }}
   </li>
@@ -13,8 +13,18 @@
   </mat-form-field>
 
   <button mat-button color="primary" type="submit" [disabled]="form.invalid">Añadir</button>
-</form>
+</form> 
 
 <div *ngIf="success">
   Usuari afegit OK!
-</div>
+</div>-->
+
+<h3>Hotness ({{(hotness$ | async)?.length}})</h3>
+
+<ul>
+  <li *ngFor="let game of hotness$ | async">
+      <!-- {{ game | json }} -->
+      {{ game['$']['rank'] }} -  {{ game['$']['id'] }} - <img src="{{ game.thumbnail[0]['$']['value'] }}">  {{ game.name[0]['$']['value'] }} ({{ game.yearpublished[0]['$']['value'] }})
+  </li>
+</ul>
+
