@@ -10,7 +10,7 @@ import { BggService } from '../../services/bgg.service';
 })
 export class HotnessComponent implements OnInit {
   hotness$: any;
-  
+  detail$: Observable<any>;
 
   constructor(
     private bggService: BggService
@@ -18,6 +18,10 @@ export class HotnessComponent implements OnInit {
 
   ngOnInit() {
     this.hotness$ = this.bggService.getHotness();
+  }
+
+  showDetails(id: string) {
+   this.detail$ = this.bggService.getBggDetail(id);
   }
 
 }

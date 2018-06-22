@@ -26,7 +26,7 @@ import { FlexLayoutModule }  from '@angular/flex-layout';
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig, 'letsplay'),
+    AngularFireModule.initializeApp(firebaseConfig), /* , 'letsplay' */
     AngularFirestoreModule,
     MatInputModule,
     MatCardModule,
