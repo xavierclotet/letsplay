@@ -1,0 +1,11 @@
+img {
+  cursor: pointer;
+}
+
+card-picture {
+  margin: 10px 0;
+}
+
+span.card-title {
+  font-size: 17px
+}
