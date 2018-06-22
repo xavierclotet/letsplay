@@ -1,9 +1,19 @@
-img {
-  cursor: pointer;
+.img {
+  width: 100%;
+  margin-bottom: 18%;
+  cursor:pointer;
+}
+.card-picture {
+  margin-bottom: 10px;
 }
 
-card-picture {
-  margin: 10px 0;
+.container {
+  min-height: 100%;
+  width: 100%;
+}
+
+.search-form {
+  width: 90%;
 }
 
 span.card-title {
