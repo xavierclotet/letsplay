@@ -40,3 +40,8 @@ Thumbs.db
 
 .firebaserc
 /src/environments/firebase.config
+
+# cypress
+/cypress/fixtures
+/cypress/plugins
+/cypress/support

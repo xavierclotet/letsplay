@@ -11,7 +11,7 @@
     </mat-card-title>
     <mat-card-subtitle>
       <span *ngIf="details.rank !== -1">Rank: {{ details.rank }}</span>
-      Nota: {{ details.averageRating }}
+      Nota: {{ details.averageRating | number}}
     </mat-card-subtitle>
     <mat-card-content>
         <!-- <img src="{{ details.thumbnail }}" style="vertical-align: text-top"> Descripció: {{ details.description }} -->
