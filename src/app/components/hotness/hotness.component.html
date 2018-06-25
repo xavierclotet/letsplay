@@ -5,7 +5,7 @@
 </mat-form-field>
 <button type="submit" mat-raised-button color="primary">Search</button> -->
 
-<mat-card *ngIf="detail$ | async as details">
+<mat-card class="mat__details" *ngIf="detail$ | async as details">
     <mat-card-title>
       {{ details.name }} <span style="font-size: 13px">(Any: {{ details.yearPublished}})</span>
     </mat-card-title>
