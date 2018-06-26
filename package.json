@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^6.0.6",
     "@angular/platform-browser-dynamic": "^6.0.6",
     "@angular/router": "^6.0.6",
+    "@datorama/akita": "^1.1.0",
     "angularfire2": "^5.0.0-rc.11",
     "core-js": "^2.5.7",
     "firebase": "^5.1.0",
