@@ -9,8 +9,6 @@
 - npm install firebase angularfire2 --save o yarn add firebase angularfire2
 
 ## Deploy
-- ng build --prod
-- firebase init
-- firebase deploy
+- yarn run deploy
 
 https://lcd3-eb77b.firebaseapp.com/letsplay/

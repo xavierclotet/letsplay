@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Store, StoreMetadata } from '@datorama/akita';
+import { Store, StoreConfig } from '@datorama/akita';
 import { Layout } from './layout.model';
 
-export interface State {
-
-}
+export interface State extends Store<Layout> {}
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'layout' })
 export class LayoutUIStore extends Store<State> {
 
   constructor() {
-    super();
+    super({});
   }
 
 }

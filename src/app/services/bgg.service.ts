@@ -17,7 +17,7 @@ export class BggService {
     private _http: HttpClient
   ) { }
 
-  getHotness() {
+  getHotness() { // https://www.boardgamegeek.com/xmlapi2/hot?type=boardgame
     return this._http.get(`${APIURL}hot?type=boardgame`, { responseType: 'text'}).pipe(
       map((res:Response) => {
         let data;
