@@ -9,6 +9,52 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
+
+<mat-card class="mat__details" *ngIf="detail$ | async as details">
+  <mat-card-title>
+    {{ details.name }} <span style="font-size: 13px">(Any: {{ details.yearPublished}})</span>
+  </mat-card-title>
+  <mat-card-subtitle>
+    <span *ngIf="details.rank !== -1">Rank: {{ details.rank }}</span>
+    Nota: {{ details.averageRating | number}}
+  </mat-card-subtitle>
+  <mat-card-content>
+     
+      <div>
+        Jugadors: de {{ details.minPlayers}} a {{ details.maxPlayers}}
+      </div>
+      <div>
+        Temps: {{ details.playingTime}} min
+      </div>
+      <div>
+        Mecàniques: 
+        <ul>
+          <li *ngFor="let mec of details.mechanics">{{mec}}</li>
+        </ul>
+      </div>
+      <div>
+          Dissenyador/s: 
+          <ul>
+            <li *ngFor="let dis of details.designers">{{dis}}</li>
+          </ul>
+          </div>
+        <div>
+          Il.lustrador/s:
+          <ul>
+              <li *ngFor="let artist of details.artists">{{artist}}</li>
+            </ul>
+        </div>
+        <div *ngIf="details.expansions && details.expansions.length > 0">
+            Expansió/ns:
+            <ul>
+                <li *ngFor="let expansion of details.expansions">
+                  <a href="https://boardgamegeek.com/boardgame/{{expansion.gameId}}">{{expansion.name}}</a>
+                </li>
+              </ul>
+          </div>
+  </mat-card-content>
+</mat-card>
+
 <div class="content"> 
   <div class="list"
        [@fadeIn]="games.length"  
@@ -33,50 +79,6 @@
 
 
 
-<mat-card class="mat__details" *ngIf="detail$ | async as details">
-    <mat-card-title>
-      {{ details.name }} <span style="font-size: 13px">(Any: {{ details.yearPublished}})</span>
-    </mat-card-title>
-    <mat-card-subtitle>
-      <span *ngIf="details.rank !== -1">Rank: {{ details.rank }}</span>
-      Nota: {{ details.averageRating | number}}
-    </mat-card-subtitle>
-    <mat-card-content>
-       
-        <div>
-          Jugadors: de {{ details.minPlayers}} a {{ details.maxPlayers}}
-        </div>
-        <div>
-          Temps: {{ details.playingTime}} min
-        </div>
-        <div>
-          Mecàniques: 
-          <ul>
-            <li *ngFor="let mec of details.mechanics">{{mec}}</li>
-          </ul>
-        </div>
-        <div>
-            Dissenyador/s: 
-            <ul>
-              <li *ngFor="let dis of details.designers">{{dis}}</li>
-            </ul>
-            </div>
-          <div>
-            Il.lustrador/s:
-            <ul>
-                <li *ngFor="let artist of details.artists">{{artist}}</li>
-              </ul>
-          </div>
-          <div *ngIf="details.expansions && details.expansions.length > 0">
-              Expansió/ns:
-              <ul>
-                  <li *ngFor="let expansion of details.expansions">
-                    <a href="https://boardgamegeek.com/boardgame/{{expansion.gameId}}">{{expansion.name}}</a>
-                  </li>
-                </ul>
-            </div>
-    </mat-card-content>
-</mat-card>
 
 <!-- <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutGap="10px">
   <mat-card fxFlex="250px" class="card-picture" *ngFor="let game of hotness$ | async">

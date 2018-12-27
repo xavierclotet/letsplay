@@ -1,15 +1,20 @@
 # Letsplay
 
+Tool that interacts to Bgg API
 
 
 ## Help
 - npm install -g firebase-tools
 - firebase login
-- firebase init functions
+- firebase init, select hosting
+
+## More
 - ng add @angular/material
 - npm install firebase angularfire2 --save o yarn add firebase angularfire2
 
 ## Deploy
-- yarn run deploy
+- yarn/npm run deploy
 
-https://lcd3-eb77b.firebaseapp.com/letsplay/
+## Deployed to
+
+https://crackling-torch-8509.firebaseapp.com/

@@ -31,7 +31,6 @@
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
-testem.log
 /typings
 
 # System Files
@@ -45,3 +44,5 @@ Thumbs.db
 /cypress/fixtures
 /cypress/plugins
 /cypress/support
+
+/.firebase/
