@@ -1,11 +1,11 @@
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBkQ0H5ayq7L14aGcafsSktfOe8WW0Nqq0",
-    authDomain: "lcd3-eb77b.firebaseapp.com",
-    databaseURL: "https://lcd3-eb77b.firebaseio.com",
-    projectId: "lcd3-eb77b",
-    storageBucket: "lcd3-eb77b.appspot.com",
-    messagingSenderId: "881977107982"
+    apiKey: "AIzaSyDJ3pDH87tOrdlS5lcNd7SV3dSWaJ2NXNo",
+    authDomain: "crackling-torch-8509.firebaseapp.com",
+    databaseURL: "https://crackling-torch-8509.firebaseio.com",
+    projectId: "crackling-torch-8509",
+    storageBucket: "",
+    messagingSenderId: "907544095903"
 };
 /* export const firebaseAuthConfig = {
   provider: AuthProviders.Google,

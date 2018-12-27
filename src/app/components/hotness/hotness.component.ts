@@ -1,27 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
+import { tap , delay} from 'rxjs/operators';
 import { BggService } from '../../services/bgg.service';
+import { trigger } from '@angular/animations';
+import { fadeIn, fadeOut } from '../../utils/animations/fade-animations';
+
+const RESPONSE_DELAY = 1750;
 
 @Component({
   selector: 'app-hotness',
+  animations: [
+    // trigger('fadeOut', fadeOut()),
+    trigger('fadeIn', fadeIn(':enter')) 
+  ],
   templateUrl: './hotness.component.html',
-  styleUrls: ['./hotness.component.css']
+  styleUrls: ['./hotness.component.scss']
 })
-export class HotnessComponent implements OnInit {
-  hotness$: any;
+export class HotnessComponent  {
+  hotness$: Observable<any[]> = this.bggService.getHotness();
   detail$: Observable<any>;
-
+  useSpinner = false;
   constructor(
     private bggService: BggService
   ) { }
 
-  ngOnInit() {
-    this.hotness$ = this.bggService.getHotness();
-  }
 
   showDetails(id: string) {
    this.detail$ = this.bggService.getBggDetail(id);
   }
 
 }
+

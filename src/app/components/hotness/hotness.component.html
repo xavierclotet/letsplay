@@ -1,9 +1,37 @@
 <!-- https://tburleson-layouts-demos.firebaseapp.com/#/docs -->
-
 <!-- <mat-form-field class="search-form">
   <input matInput placeholder="Filter game" type="text">
 </mat-form-field>
 <button type="submit" mat-raised-button color="primary">Search</button> -->
+<mat-toolbar>
+  <mat-toolbar-row>
+      <h2>Safareig de la BGG</h2>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="content"> 
+  <div class="list"
+       [@fadeIn]="games.length"  
+       *ngIf='hotness$ | async as games' 
+       fxLayout="row wrap">
+
+       <mat-card
+         *ngFor='let game of games'  fxFlex="25" fxFlex.lt-sm="50">
+         <mat-card-title>
+          <span class="card-title" title="{{game.name[0]['$']['value']}}" (click)="showDetails(game['$']['id'])">
+            {{ game['$']['rank'] }}- {{ game.name[0]['$']['value']  }} <!-- | slice:0:20 -->
+          </span> 
+        </mat-card-title>
+        <mat-card-content>
+          <a href="https://boardgamegeek.com/boardgame/{{game['$']['id']}}" target="_blank" title="Go to BGG file">
+            <img src="{{ game.thumbnail[0]['$']['value'] }}">
+          </a>
+        </mat-card-content>
+    </mat-card>     
+    
+ </div>
+
+
 
 <mat-card class="mat__details" *ngIf="detail$ | async as details">
     <mat-card-title>
@@ -14,8 +42,7 @@
       Nota: {{ details.averageRating | number}}
     </mat-card-subtitle>
     <mat-card-content>
-        <!-- <img src="{{ details.thumbnail }}" style="vertical-align: text-top"> Descripció: {{ details.description }} -->
-        
+       
         <div>
           Jugadors: de {{ details.minPlayers}} a {{ details.maxPlayers}}
         </div>
@@ -48,22 +75,21 @@
                   </li>
                 </ul>
             </div>
-        <!-- <pre>{{ details | json }}</pre> -->
     </mat-card-content>
 </mat-card>
-<br>
-<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+
+<!-- <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutGap="10px">
   <mat-card fxFlex="250px" class="card-picture" *ngFor="let game of hotness$ | async">
     <mat-card-title>
       <span class="card-title" title="{{game.name[0]['$']['value']}}" (click)="showDetails(game['$']['id'])">
-        {{ game['$']['rank'] }}- {{ game.name[0]['$']['value'] | slice:0:15 }}
-      </span> <!--  ({{ game.yearpublished[0]['$']['value'] }}) -->
+        {{ game['$']['rank'] }}- {{ game.name[0]['$']['value'] | slice:0:20 }}
+      </span> 
     </mat-card-title>
     <mat-card-content>
-    <a href="https://boardgamegeek.com/boardgame/{{game['$']['id']}}" target="_blank" title="Go to BGG file">
-      <img src="{{ game.thumbnail[0]['$']['value'] }}">
-    </a>
-  </mat-card-content>
+      <a href="https://boardgamegeek.com/boardgame/{{game['$']['id']}}" target="_blank" title="Go to BGG file">
+        <img src="{{ game.thumbnail[0]['$']['value'] }}">
+      </a>
+    </mat-card-content>
   </mat-card>
 
-</div>
+</div> -->
