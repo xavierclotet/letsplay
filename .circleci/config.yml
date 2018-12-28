@@ -23,9 +23,6 @@ jobs:
                 paths:
                     - node_modules
             - run:
-                name: rebuild node-sass
-                command: npm rebuild node-sass
-            - run:
                 name: Linting
                 command: npm run lint
             - run:
