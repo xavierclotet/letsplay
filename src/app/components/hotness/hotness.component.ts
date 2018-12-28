@@ -11,14 +11,13 @@ const RESPONSE_DELAY = 1750;
   selector: 'app-hotness',
   animations: [
     // trigger('fadeOut', fadeOut()),
-    trigger('fadeIn', fadeIn(':enter')) 
+    trigger('fadeIn', fadeIn(':enter'))
   ],
   templateUrl: './hotness.component.html',
   styleUrls: ['./hotness.component.scss']
 })
 export class HotnessComponent implements OnInit {
   hotness: any[];
-  
   loading = false;
   dialogRef: MatDialogRef<GameDetailsDialogComponent>;
   constructor(
@@ -44,11 +43,7 @@ export class HotnessComponent implements OnInit {
       disableClose: false,
       closeOnNavigation: true
     });
-
-   
   }
-
-  
 
 }
 

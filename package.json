@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "cypress open",
+    "test-prod": "cypress run --spec 'cypress/integration/test/**/*' --env env=prod,baseUrl=https://crackling-torch-8509.firebaseapp.com/",
+    "test-prod-inlocal": "cypress run --spec 'cypress/integration/test/**/*' --env env=prod,baseUrl=https://crackling-torch-8509.firebaseapp.com/  --headed --no-exit",
     "scrap": "node functions/src/scraper.js",
     "deploy": "ng build --prod && firebase deploy",
     "deploy:f": "firebase deploy --only functions"
@@ -29,6 +31,7 @@
     "@datorama/akita": "1.23.1",
     "angularfire2": "^5.1.1",
     "core-js": "^2.6.1",
+    "eslint": "^5.11.1",
     "firebase": "^5.7.0",
     "hammerjs": "^2.0.8",
     "rxjs": "^6.3.3",

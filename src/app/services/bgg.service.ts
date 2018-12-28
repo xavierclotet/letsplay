@@ -14,7 +14,7 @@ const APIJSONURL = 'https://bgg-json.azurewebsites.net/';
   providedIn: 'root'
 })
 export class BggService {
-  
+
   constructor(
     private _http: HttpClient
   ) { }
@@ -33,7 +33,7 @@ export class BggService {
     );
   }
 
-  getBggDetail(id: string) { 
+  getBggDetail(id: string) {
     return this._http.get(`${APIJSONURL}thing/${id}`).pipe(
       catchError((error: any) => throwError(error))
     );
@@ -43,12 +43,10 @@ export class BggService {
     return this._http.get(`${APIJSONURL}search?/type=boardgame&query=${item}`).pipe(
       catchError((error: any) => throwError(error))
     );
-    
   }
 
   // plays https://www.boardgamegeek.com/xmlapi2/plays?username=darklife74
   // collection https://www.boardgamegeek.com/xmlapi2/collection/?username=darklife74&own=1
 
 
-  
 }

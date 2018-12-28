@@ -1,6 +1,5 @@
 import { ID } from '@datorama/akita';
-  
-export type Session = {
+export interface Session {
   ID: string;
   name: string;
   loggedIn: boolean;

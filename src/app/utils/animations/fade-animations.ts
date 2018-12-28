@@ -3,9 +3,9 @@ import { style, animate, transition, query, stagger } from '@angular/animations'
 
 export function fadeIn(selector: string, duration = '400ms ease-out') {
   return [
-    transition('* => *', [      
+    transition('* => *', [
       query(selector, [
-        style({ opacity: 0, transform: 'translateY(-5px)'}), 
+        style({ opacity: 0, transform: 'translateY(-5px)'}),
         stagger('50ms', [
           animate(duration, style({
             opacity: 1,
@@ -23,7 +23,7 @@ export function fadeOut(selector = ':leave', duration = 300) {
       query(selector, [
         style({ opacity: 1 }),
         stagger('50ms', [
-          animate(duration, style({ 
+          animate(duration, style({
             opacity: 0
           }))
         ])

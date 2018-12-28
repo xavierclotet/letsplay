@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 
     }); */
   }
-  
+
  /*  async submitHandler() {
     this.loading = true;
     const formValue = this.form.value;

@@ -1,5 +1,5 @@
-export type Layout = {
-
+export interface Layout {
+  test?: string;
 }
 
 /**
@@ -8,6 +8,5 @@ export type Layout = {
  */
 export function createLayout(params: Partial<Layout>) {
   return {
-
   } as Layout;
 }

@@ -14,7 +14,7 @@ import {
 
 @NgModule({
   exports: [
-    MatButtonModule,    
+    MatButtonModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatInputModule,
