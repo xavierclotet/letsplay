@@ -14,9 +14,10 @@ import { firebaseConfig } from '../environments/firebase.config';
 import { HotnessComponent } from './components/hotness/hotness.component';
 import { FlexLayoutModule }  from '@angular/flex-layout';
 import { CustomMaterialModule } from './custom-material.module';
+import { GameDetailsDialogComponent } from './components/game-details-dialog/game-details-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, HotnessComponent],
+  declarations: [AppComponent, HotnessComponent, GameDetailsDialogComponent],
   imports: [
     BrowserModule, 
     BrowserAnimationsModule, 
@@ -27,6 +28,9 @@ import { CustomMaterialModule } from './custom-material.module';
     AngularFireModule.initializeApp(firebaseConfig), /* , 'letsplay' */
     AngularFirestoreModule,
     
+  ],
+  entryComponents: [
+    GameDetailsDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
