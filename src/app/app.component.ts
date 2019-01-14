@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -11,10 +11,15 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 })
 export class AppComponent implements OnInit {
   private usersCollecion: AngularFirestoreCollection;
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
-  constructor(
-    // private afs: AngularFirestore, private fb: FormBuilder
-    ) { }
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
 
   ngOnInit() {
     /* this.usersCollecion = this.afs.collection('users');
@@ -37,6 +42,10 @@ export class AppComponent implements OnInit {
     }
     this.loading = false;
   } */
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
 
 
 }

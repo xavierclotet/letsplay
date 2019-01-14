@@ -15,11 +15,14 @@ import { HotnessComponent } from './components/hotness/hotness.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomMaterialModule } from './custom-material.module';
 import { GameDetailsDialogComponent } from './components/game-details-dialog/game-details-dialog.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CronComponent } from './components/cron/cron.component';
 
 @NgModule({
-  declarations: [AppComponent, HotnessComponent, GameDetailsDialogComponent],
+  declarations: [AppComponent, HotnessComponent, GameDetailsDialogComponent, CronComponent],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
