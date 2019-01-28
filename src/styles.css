@@ -1,3 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.mat-flat-button.mat-warn, .mat-mini-fab.mat-warn, .mat-raised-button.mat-warn {
+  background-color: #906619;
+}
+
+.mat-toolbar {
+  background: #d0fbff;
+}
+
+.footer {
+  min-height: 51px;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  bottom: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  padding:10px;
+}

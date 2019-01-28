@@ -39,63 +39,6 @@ $min-content-height: 459px;
   overflow: hidden;
 }
 
-.lines {
-  margin-left: $avatar-gap;
-  margin-block-end: $row-gap;
-  width: calc(100% - $avatar-gap);
-
-
-  h2, h3, p {
-    height: 24px;
-    margin: 0;
-    padding: 0;
-    margin-top: 0;
-    align-content: center;
-
-    position: relative;
-  }
-
-  h2 {
-    font-weight: 500;
-    font-size: 1.2em;
-  }
-
-  h3 {
-    color: #8cc5d6;
-    font-weight: 500;
-    font-size: 1.1em;
-  }
-
-  p {
-    font-size: 0.90em;
-
-    .company {
-      color: rgb(148, 148, 148);
-    }
-  }
-}
-
-.mat-flat-button.mat-warn, .mat-mini-fab.mat-warn, .mat-raised-button.mat-warn {
-  background-color: #906619;
-}
-
-.mat-toolbar {
-    background: #d0fbff;
-}
-
-.footer {
-  min-height: 51px;
-  width: 100%;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  bottom: 0px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: white;
-  padding:10px;
-}
-
 
  .img {
   width: 100%;

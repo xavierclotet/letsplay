@@ -22,3 +22,7 @@ https://crackling-torch-8509.firebaseapp.com/
 ## Images
 
 https://github.com/CircleCI-Public/circleci-dockerfiles/tree/master/node/images
+
+## functions
+
+firebase init functions

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-cron',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CronComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+   
+
   }
 
+  addTask() {
+    this.taskService.performIn(minutes(30), 'sendWelcomeEmail', { user: '1' } )
+  }
+  
+
+}
+
+function minutes(v: number) {
+  return v * 60 * 1000;
 }
